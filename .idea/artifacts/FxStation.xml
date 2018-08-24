@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="FxStation">
+    <output-path>$PROJECT_DIR$/../Artifacts</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.MainStage" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="image" />
+        <option name="title" value="Main.UI" />
+        <option name="vendor" value="" />
+        <option name="version" value="V181601" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="FxStation.jar">
+        <element id="module-output" name="FxStation" />
+      </element>
+      <element id="library" level="project" name="jacob-1" />
+    </root>
+  </artifact>
+</component>
