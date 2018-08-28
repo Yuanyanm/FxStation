@@ -29,28 +29,21 @@ public class LoginStage extends Application {
 
     @Override
     public void start(Stage pkStage) throws Exception{
-        //Application.setUserAgentStylesheet((getClass().getResource("MainStyle.css").toExternalForm()));//全局CSS
+
         Application.setUserAgentStylesheet(STYLESHEET_CASPIAN);
+        //Application.setUserAgentStylesheet((getClass().getResource("MainStyle.css").toExternalForm()));//全局CSS
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         pkStage.setTitle("我是窗口标题");//窗口标题
         //pkStage.setScene(new Scene(root, 320, 200));
-        //pkStage.getIcons().add(new Image("images/title/yl_.png"));//标题Icon图标
+        pkStage.getIcons().add(new Image("assets/imgs/title/yl_.png"));//标题Icon图标
         Scene pkScene = new Scene(root);
-       // pkScene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());
+        //pkScene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());
         pkStage.setScene(pkScene);
         //pkStage.setAlwaysOnTop(true);//始终位于顶层显示
         pkStage.setResizable(true);//禁止调整窗口大小
         //pkStage.setFullScreen(true);
         //pkStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);//退出全屏模式按键
         //pkStage.setFullScreenExitKeyCombination(KeyCombination.Modifier(KeyCode.F11));//退出全屏模式按键
-        pkStage.setFullScreenExitKeyCombination(new KeyCombination() {
-            @Override
-            public boolean match(KeyEvent event) {
-                //event.getCode().equals(KeyCode.F12);
-                System.out.println(event.getText());
-                return super.match(event);
-            }
-        });//退出全屏模式按键
         //pkStage.initStyle(StageStyle.UNDECORATED);//设定窗口无边框
         pkStage.initStyle(StageStyle.DECORATED);//全屏时默认无边框，ESC后显示边框
         pkStage.widthProperty().addListener(new StageChangeListener(pkStage));//窗口大小改变事件
@@ -130,19 +123,24 @@ public class LoginStage extends Application {
             if(stageWidth > 600){
                 stage.setFullScreen(true);//无边框全屏，ESC退出
                 //scene.getStylesheets().add(getClass().getResource("MainStyle_max.css").toExternalForm());
+                Application.setUserAgentStylesheet(null);
                 Application.setUserAgentStylesheet(STYLESHEET_MODENA);
+               // Application.setUserAgentStylesheet(getClass().getResource("MainStyle_max.css").toExternalForm());
                 for (int i = 0; i < stylesheets.size(); i++) {
                     System.out.println("000000 "+stylesheets.get(i));
                 }
             }else{
-                //scene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());
-                //Application.setUserAgentStylesheet((getClass().getResource("MainStyle.css").toExternalForm()));//全局CSS
+                //清除所有样式，重新添加样式
+                /*scene.getStylesheets().clear();
+                scene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());*/
+                Application.setUserAgentStylesheet(null);
                 Application.setUserAgentStylesheet(STYLESHEET_CASPIAN);
+                //Application.setUserAgentStylesheet((getClass().getResource("MainStyle.css").toExternalForm()));//全局CSS
                 for (int i = 0; i < stylesheets.size(); i++) {
                     System.out.println("1111111 "+stylesheets.get(i));
                 }
             }
-            //stage.getIcons().add(new Image("images/title/ww_.png"));
+            //stage.getIcons().add(new Image("imgs/title/ww_.png"));
         }
     }
 
