@@ -3,8 +3,10 @@ package com;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.text.Font;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,7 +27,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("init......");
-        lab_UserNo.setFont(new Font(AppConstant.APP_FONT_SIZE));
+        //lab_UserNo.setFont(new Font(AppConstant.APP_FONT_SIZE));
     }
 
     @FXML

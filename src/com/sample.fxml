@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Controller" >
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Controller">
    <children>
       <Pane prefHeight="200.0" prefWidth="320.0" GridPane.columnIndex="1">
          <children>
             <Label fx:id="lab_UserNo" layoutX="56.0" layoutY="42.0" text="用户名：" />
             <Label layoutX="56.0" layoutY="87.0" text="密   码：" />
-            <TextField fx:id="txtUserNo" layoutX="102.0" layoutY="38.0" />
-            <PasswordField fx:id="txtUserPwd" layoutX="102.0" layoutY="83.0" />
+            <TextField fx:id="txtUserNo" layoutX="102.0" layoutY="38.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" />
+               </padding></TextField>
+            <PasswordField fx:id="txtUserPwd" layoutX="102.0" layoutY="83.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" />
+               </padding></PasswordField>
             <Button fx:id="btnLoginIn" layoutX="104.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnLoginInOnClick" prefHeight="25.0" prefWidth="47.0" text="登录" textAlignment="CENTER" />
             <Button fx:id="btnReset" layoutX="190.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" text="重置" textAlignment="CENTER" />
          </children>
       </Pane>
    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

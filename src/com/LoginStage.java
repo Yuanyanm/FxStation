@@ -1,8 +1,5 @@
 package com;
 
-import com.jacob.activeX.ActiveXComponent;
-import com.jacob.com.Dispatch;
-import com.jacob.com.Variant;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -12,18 +9,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCharacterCombination;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class LoginStage extends Application {
 
@@ -37,7 +27,7 @@ public class LoginStage extends Application {
         //pkStage.setScene(new Scene(root, 320, 200));
         pkStage.getIcons().add(new Image("assets/imgs/title/yl_.png"));//标题Icon图标
         Scene pkScene = new Scene(root);
-        //pkScene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());
+        pkScene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());
         pkStage.setScene(pkScene);
         //pkStage.setAlwaysOnTop(true);//始终位于顶层显示
         pkStage.setResizable(true);//禁止调整窗口大小
@@ -122,19 +112,20 @@ public class LoginStage extends Application {
             ObservableList<String> stylesheets = scene.getStylesheets();
             if(stageWidth > 600){
                 stage.setFullScreen(true);//无边框全屏，ESC退出
-                //scene.getStylesheets().add(getClass().getResource("MainStyle_max.css").toExternalForm());
-                Application.setUserAgentStylesheet(null);
-                Application.setUserAgentStylesheet(STYLESHEET_MODENA);
+                scene.getStylesheets().clear();
+                scene.getStylesheets().add(getClass().getResource("MainStyle_max.css").toExternalForm());
+                /*Application.setUserAgentStylesheet(null);
+                Application.setUserAgentStylesheet(STYLESHEET_MODENA);*/
                // Application.setUserAgentStylesheet(getClass().getResource("MainStyle_max.css").toExternalForm());
                 for (int i = 0; i < stylesheets.size(); i++) {
                     System.out.println("000000 "+stylesheets.get(i));
                 }
             }else{
                 //清除所有样式，重新添加样式
-                /*scene.getStylesheets().clear();
-                scene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());*/
-                Application.setUserAgentStylesheet(null);
-                Application.setUserAgentStylesheet(STYLESHEET_CASPIAN);
+                scene.getStylesheets().clear();
+                scene.getStylesheets().add(getClass().getResource("MainStyle.css").toExternalForm());
+                /*Application.setUserAgentStylesheet(null);
+                Application.setUserAgentStylesheet(STYLESHEET_CASPIAN);*/
                 //Application.setUserAgentStylesheet((getClass().getResource("MainStyle.css").toExternalForm()));//全局CSS
                 for (int i = 0; i < stylesheets.size(); i++) {
                     System.out.println("1111111 "+stylesheets.get(i));

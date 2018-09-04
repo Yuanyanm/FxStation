@@ -1,6 +1,5 @@
 package com.lqyfby.app.led.stage;
 
-import com.LoginStage;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -35,7 +34,7 @@ public class ledStage extends Application {
 
         Application.setUserAgentStylesheet(STYLESHEET_CASPIAN);
         //Application.setUserAgentStylesheet((getClass().getResource("MainStyle.css").toExternalForm()));//全局CSS
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/ledStation.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/ledStation1.fxml"));
         //pkStage.setTitle("我是窗口标题");//窗口标题
         //pkStage.setScene(new Scene(root, 320, 200));
         pkStage.getIcons().add(new Image("assets/imgs/title/yl_.png"));//标题Icon图标
